@@ -4,10 +4,14 @@ $(function () {
     $(".skill p").hide();
     $("#section4").hide();
 
+
+
     $(".skill li").click(function () {
-        $(this).find("p").slideToggle();
-
-
+      
+        $(this).find("i").toggleClass("fa-angle-up");
+          $(".skill li p").stop().slideUp();
+         $(this).find("p").stop().slideUp();
+          $(this).find("p").slideDown();
 
     })
 
@@ -16,7 +20,10 @@ $(function () {
 
 
 
-    $('.more ').click(function () {
+
+
+
+    $('.more').click(function () {
 
         $("#section4").slideToggle();
     });
@@ -33,12 +40,12 @@ $(function () {
     });
     $('.boxBtn3').click(function () {
         $('html').animate({
-            scrollTop:  2400
+            scrollTop: 2400
         }, 1000);
     });
     $('.boxBtn4').click(function () {
         $('html').animate({
-            scrollTop:5500
+            scrollTop: 5500
         }, 1000);
     });
 
@@ -58,7 +65,7 @@ $(function () {
 
 
 
-        const scrollTop = $(window).scrollTop() + $(window).height();
+        const scrollTop = $(window).scrollTop()
 
         $(".scrollTop").text(parseInt(scrollTop));
 
@@ -87,7 +94,7 @@ $(function () {
         if (scrollTop > $("#section2").offset().top) {
             $("#section2").addClass("show");
             $(".skill").addClass("show");
-        
+
         }
 
 
@@ -97,7 +104,7 @@ $(function () {
             $('#btn_box li').eq(2).find('a').addClass('on');
 
         };
-         if (scrollTop > $("footer").offset().top) {
+        if (scrollTop > $("footer").offset().top) {
             $('#btn_box li>a').removeClass('on');
             $('#btn_box li').eq(3).find('a').addClass('on');
 
@@ -151,39 +158,39 @@ $(function () {
 
     })
 
- $('.slider').slick({
-  dots: true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
+    $('.slider').slick({
+
+        infinite: false,
+        speed: 300,
         slidesToShow: 3,
         slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
     },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
     },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
     }
     // You can unslick at a given breakpoint now by adding:
     // settings: "unslick"
     // instead of a settings object
   ]
-});
+    });
 });

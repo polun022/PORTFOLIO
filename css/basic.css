@@ -1,8 +1,11 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 body {
+    font-family: 'Russo One', sans-serif;
     color: #f4a32c;
-    background: #1c2855;
+    background: #2e4391;
     overflow: scroll;
     padding: 0;
     margin: 0;
@@ -84,12 +87,12 @@ header .scroll {
     z-index: 8;
 }
 
- 
+
 
 
 .main_txt p {
     color: #fff;
-               transform: translateY(-30vh)
+    transform: translateY(-30vh)
 }
 
 
@@ -224,7 +227,7 @@ section {
     position: relative;
     float: left;
     box-sizing: border-box;
-    width: 25%;
+    width: 550px;
     min-width: 450px;
     height: 450px;
     margin: 20px 50px;
@@ -239,6 +242,7 @@ section {
 }
 
 .skill {
+    position: relative;
 
     border: 1px solid #fff;
     padding: 20px;
@@ -262,6 +266,13 @@ section {
 
 }
 
+.skill li::before {}
+
+.skill i {
+    position: absolute;
+    right: 2vw;
+}
+
 .skill a {
 
     margin-left: 5px;
@@ -273,6 +284,7 @@ section {
     margin-top: 5px;
     margin-left: 15px;
     color: #000;
+    line-height: 1.1vw;
     font-size: .7em
 }
 
@@ -470,7 +482,17 @@ section {
 
 }
 
-
+.borderL::after {
+    display: block;
+    content: "";
+    clear: both;
+    height: 100%;
+    width: 2px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: -8.5%;
+}
 
 
 .more {
@@ -539,6 +561,13 @@ section {
 }
 
 
+.section3_a_txt:nth-child(5, 3, 1) {
+    position: relative;
+    border: 1px solid #fff;
+
+}
+
+
 .section3_a_txt > * {
     margin-bottom: 10px;
 }
@@ -554,6 +583,10 @@ section {
     animation: aa 1s infinite;
 }
 
+
+.section3_a_txt > p {
+    display: none;
+}
 
 @keyframes aa {
 
@@ -577,7 +610,9 @@ section {
 
 .slider_wrap {
     width: 100vw;
-    padding: 50px 0;
+   
+
+
 
 }
 
@@ -589,8 +624,9 @@ section {
 .slider {
     background: #171e41;
     ;
-    width: 80vw;
-    height: 100%;
+    
+    width: 100%;
+    height: auto;
     margin: auto;
 }
 
@@ -602,7 +638,7 @@ section {
 }
 
 
-
+.slider p{text-align: center;margin: 3vh}
 .slider img:hover {
     transform: scale(1.1);
 
@@ -640,29 +676,20 @@ section {
 
 /*footer*/
 footer::after {
-    display: block;
-    clear: both;
-    content: "";
+  
 }
 
 footer {
-    margin: 50px 0;
-    width: 100%;
-    height: 30vh;
+  
 
 }
 
 footer {
-    text-align: center;
-    color: #fff;
-    width: 100%;
-    height: 100vh;
-    margin-top: 200px;
+   
 }
 
 footer p {
-    text-align: center;
-    color: #fff
+ 
 }
 
 
@@ -761,7 +788,8 @@ footer p {
 
 
 .skill.show {
-    transform: translateX(0)
+    height: 100%;
+    transform: translateX(0);
 }
 
 
@@ -843,7 +871,7 @@ footer p {
 
         float: none;
         min-width: 450px;
-        height: 450px;
+        height: 100%;
         margin: 20px 50px;
     }
 
@@ -876,9 +904,9 @@ footer p {
     }
 
 
-    .more {
-        font-size: 2vw;
-        padding: 1vw 2vw
+    .more {color: #fff;
+        font-size: 2vw;text-align: center;
+        padding: 1vw 8vw
     }
 
 
@@ -899,25 +927,9 @@ footer p {
 
     }
 
-}
-
-
-
-
-
-
-
-@media (max-width:1024px) {
-    header .scroll {
+    .borderL::after {
         display: none;
     }
-    
-    
-    
-    
-
-
-
 }
 
 
@@ -929,10 +941,10 @@ footer p {
 
 
 @media (max-width:768px) {
-    
-    
-    
-    
+
+
+
+
 
 
 
@@ -996,10 +1008,10 @@ footer p {
 
 
 
- .main_img2.show {
-    opacity: 1;
-    transform: translateY(55vh)
-}
+    .main_img2.show {
+        opacity: 1;
+        transform: translateY(55vh)
+    }
 
 
 
@@ -1080,12 +1092,12 @@ footer p {
     }
 
 
-    .skill_wrap {}
 
-    .skill {}
-
-    . .skill a::before {}
-
+    .skill p{line-height: 2vh;height: 100%;}
+    .skill i {
+        position: absolute;
+        right: 5vw;
+    }
 
     /*Introduce*/
 
@@ -1096,11 +1108,11 @@ footer p {
 
     .int_wrap h3 {
         padding: 30px 0;
-        font-size: 2em;
+        font-size: 16px;
 
     }
 
-    .int_wrap p {}
+    .int_wrap p {font-size: 3vw}
 
 
 
@@ -1148,7 +1160,13 @@ footer p {
 
     /*section3 이미지 삽입*/
 
+    .section3_a_img {
+        position: relative;
+    }
 
+    .borderL::after {
+        display: none
+    }
 
     .section3_a_wrap1 .section3_a_img {
 
@@ -1195,13 +1213,34 @@ footer p {
     .section3_a_txt > * {
         font-size: 3em
     }
-    
-    .section3_a_txt p{transform: translateY(8vw)}
-    .section3_a_txt p a{color: #fff;padding: 2vw 1vw;border: 1px solid ;font-size: .8em;border-radius: 2vw}
 
-    
-    
-    .section3_a_txt > a{display: none;}
+    .section3_a_txt p {
+        transform: translateY(8vw);
+
+    }
+
+    .section3_a_txt p a {
+        color: #fff;
+        padding: 2vw 1vw;
+        border: 1px solid;
+        font-size: .8em;
+        border-radius: 2vw;
+
+
+    }
+
+    .section3_a_txt > p {
+        display: block;
+    }
+
+    .section3_a_txt > p a {
+        z-index: 50
+    }
+
+    .section3_a_txt > a {
+        display: none;
+    }
+
     .section3_a_wrap .section3_a_txt {
         padding: 0;
         margin: 0;
@@ -1214,53 +1253,53 @@ footer p {
         padding: 0;
         margin: 0;
     }
-    
-    
-    
+
+
+
     .slider_wrap {
-    width: 100vw;
-    padding: 50px 0;
+        width: 100vw;
+        padding: 50px 0;
 
-}
+    }
 
-#section4 h1 {
-    text-align: center;
-    margin: 30px 0
-}
+    #section4 h1 {
+        text-align: center;
+        margin: 30px 0
+    }
 
-.slider {
-    background: #171e41;
-    ;
+    .slider {
+        background: #171e41;
+        ;
 
-    height: 100%;
-    margin: auto;
-}
+        height: 100%;
+        margin: auto;
+    }
 
-.slider img {
+    .slider img {
 
-    width: 70%;
-    margin: auto;
-    transition: 1s;
-}
-
-
-
-.slider img:hover {
-    transform: scale(1.1);
-
-}
+        width: 70%;
+        margin: auto;
+        transition: 1s;
+    }
 
 
 
+    .slider img:hover {
+        transform: scale(1.1);
 
-.slick-dots li button:before {
-    color: #fff;
-    opacity: 1;
-
-}
+    }
 
 
-    
-    
+
+
+    .slick-dots li button:before {
+        color: #fff;
+        opacity: 1;
+
+    }
+
+
+
+
 
 }
