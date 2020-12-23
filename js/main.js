@@ -2,7 +2,7 @@ $(function () {
 
 
     $(".skill p").hide();
-    $("#section4").hide();
+
 
 
 
@@ -23,10 +23,7 @@ $(function () {
 
 
 
-    $('.more').click(function () {
 
-        $("#section4").slideToggle();
-    });
 
     $('.boxBtn1').click(function () {
         $('html').animate({
