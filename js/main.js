@@ -6,6 +6,7 @@ $(function () {
 
 
 
+
     $(".skill li").click(function () {
       
         $(this).find("i").toggleClass("fa-angle-up");
@@ -14,12 +15,6 @@ $(function () {
           $(this).find("p").slideDown();
 
     })
-
-
-
-
-
-
 
 
 
@@ -62,7 +57,7 @@ $(function () {
 
 
 
-        const scrollTop = $(window).scrollTop()
+        const scrollTop = $(window).scrollTop() + $(window).height()
 
         $(".scrollTop").text(parseInt(scrollTop));
 
@@ -75,7 +70,7 @@ $(function () {
 
 
         if (scrollTop > $("#main_wrap").offset().top) {
-            $(".main_txt").addClass("show"),
+
                 $(".main_img1").addClass("show"),
                 $(".main_img2").addClass("show"),
                 $(".car").addClass("show");
@@ -156,7 +151,7 @@ $(function () {
     })
 
     $('.slider').slick({
-
+ dots: true,
         infinite: false,
         speed: 300,
         slidesToShow: 3,
